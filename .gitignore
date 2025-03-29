@@ -10,6 +10,7 @@ src/test
 *.iws
 *.iml
 *.ipr
+.gitignore
 
 ### Eclipse ###
 .apt_generated
