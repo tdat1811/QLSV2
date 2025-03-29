@@ -1,6 +1,8 @@
+package dao;
+
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.Sorts;
 import org.bson.Document;
+import pojo.Score;
 
 public class ScoreDAO {
     private final MongoCollection<Document> collection;
