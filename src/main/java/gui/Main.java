@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -15,6 +17,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 public class Main extends JFrame  implements ActionListener{
     private JPanel jpl;
@@ -50,6 +53,7 @@ public class Main extends JFrame  implements ActionListener{
 	private JButton jb9;
 	private JPanel jp19;
 	private JPanel contentPanel;
+	private JLabel jlpic;
 
     public Main()  {
         this.setTitle("^-^");
@@ -82,14 +86,14 @@ public class Main extends JFrame  implements ActionListener{
         jp3 = new JPanel();
         jp3.setBackground(new Color(204, 204, 255));
 		jp3.add(jb1 = new JButton("Tài Khoản"));
-		ImageIcon originalIcon = new ImageIcon(getClass().getResource("/img/profile.png"));
+		ImageIcon originalIcon = new ImageIcon(getClass().getResource("/profile.png"));
 		Image img = originalIcon.getImage();
 		Image newImg = img.getScaledInstance(40, 40, Image.SCALE_SMOOTH); 
 		jb1.setIconTextGap(35);
 		jb1.setIcon(new ImageIcon(newImg));
 		jb1.setHorizontalTextPosition(JButton.RIGHT);
 		
-		jb1.setPreferredSize(new Dimension(200,40));
+		jb1.setPreferredSize(new Dimension(200,50));
 		jb1.setBackground(Color.white);
 		jp2.add(jp3);
         box1.add(Box.createVerticalStrut(10));
@@ -102,31 +106,31 @@ public class Main extends JFrame  implements ActionListener{
         jp5 = new JPanel();
         jp5.setBackground(new Color(204, 204, 255));
 		jp5.add(jb2 = new JButton("Môn Học"));
-		ImageIcon originalIcon1 = new ImageIcon(getClass().getResource("/img/book-stack.png"));
+		ImageIcon originalIcon1 = new ImageIcon(getClass().getResource("/book-stack.png"));
 		Image img1 = originalIcon1.getImage();
 		Image newImg1 = img1.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb2.setIconTextGap(35);
 		jb2.setIcon(new ImageIcon(newImg1));
-		jb2.setPreferredSize(new Dimension(200,40));
+		jb2.setPreferredSize(new Dimension(200,50));
 		jb2.setBackground(Color.white);
 		jp4.add(jp5);
         
         box1.add(jp4);
         
         
-      //content sidebar3 hoc ky
+      //content sidebar3 Sinh Viên
         jp6 = new JPanel();
         jp6.setBackground(new Color(204, 204, 255));
         jp6.setPreferredSize(new Dimension(jpl.getWidth(), 80));
         jp7 = new JPanel();
         jp7.setBackground(new Color(204, 204, 255));
-		jp7.add(jb3 = new JButton("Học Kỳ"));
-		ImageIcon originalIcon2 = new ImageIcon(getClass().getResource("/img/school.png"));
+		jp7.add(jb3 = new JButton("Sinh Viên"));
+		ImageIcon originalIcon2 = new ImageIcon(getClass().getResource("/student.png"));
 		Image img2 = originalIcon2.getImage();
 		Image newImg2 = img2.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb3.setIconTextGap(35);
 		jb3.setIcon(new ImageIcon(newImg2));
-		jb3.setPreferredSize(new Dimension(200,40));
+		jb3.setPreferredSize(new Dimension(200,50));
 		jb3.setBackground(Color.white);
 		jp6.add(jp7);
         
@@ -141,12 +145,12 @@ public class Main extends JFrame  implements ActionListener{
         jp11 = new JPanel();
         jp11.setBackground(new Color(204, 204, 255));
 		jp11.add(jb5 = new JButton("Lớp Học"));
-		ImageIcon originalIcon4 = new ImageIcon(getClass().getResource("/img/group-chat.png"));
+		ImageIcon originalIcon4 = new ImageIcon(getClass().getResource("/group-chat.png"));
 		Image img4= originalIcon4.getImage();
 		Image newImg4 = img4.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb5.setIconTextGap(35);
 		jb5.setIcon(new ImageIcon(newImg4));
-		jb5.setPreferredSize(new Dimension(200,40));
+		jb5.setPreferredSize(new Dimension(200,50));
 		jb5.setBackground(Color.white);
 		jp10.add(jp11);
         
@@ -160,12 +164,12 @@ public class Main extends JFrame  implements ActionListener{
         jp13 = new JPanel();
         jp13.setBackground(new Color(204, 204, 255));
         jp13.add(jb6 = new JButton("Học phần"));
-        ImageIcon originalIcon5 = new ImageIcon(getClass().getResource("/img/Enroll.png"));
+        ImageIcon originalIcon5 = new ImageIcon(getClass().getResource("/Enroll.png"));
 		Image img5= originalIcon5.getImage();
 		Image newImg5 = img5.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb6.setIconTextGap(35);
 		jb6.setIcon(new ImageIcon(newImg5));
-        jb6.setPreferredSize(new Dimension(200, 40));
+        jb6.setPreferredSize(new Dimension(200, 50));
         jb6.setBackground(Color.white);
 
         jp12.add(jp13);
@@ -179,12 +183,12 @@ public class Main extends JFrame  implements ActionListener{
         jp15 = new JPanel();
         jp15.setBackground(new Color(204, 204, 255));
         jp15.add(jb7 = new JButton("Kết quả"));
-        ImageIcon originalIcon6 = new ImageIcon(getClass().getResource("/img/research.png"));
+        ImageIcon originalIcon6 = new ImageIcon(getClass().getResource("/research.png"));
 		Image img6= originalIcon6.getImage();
 		Image newImg6 = img6.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb7.setIconTextGap(35);
 		jb7.setIcon(new ImageIcon(newImg6));
-        jb7.setPreferredSize(new Dimension(200, 40));
+        jb7.setPreferredSize(new Dimension(200, 50));
         jb7.setBackground(Color.white);
 
         jp14.add(jp15);
@@ -198,12 +202,12 @@ public class Main extends JFrame  implements ActionListener{
         jp17 = new JPanel();
         jp17.setBackground(new Color(204, 204, 255));
         jp17.add(jb8 = new JButton("Giáo viên"));
-        ImageIcon originalIcon7 = new ImageIcon(getClass().getResource("/img/teacher.png"));
+        ImageIcon originalIcon7 = new ImageIcon(getClass().getResource("/teacher.png"));
 		Image img7= originalIcon7.getImage();
 		Image newImg7 = img7.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb8.setIconTextGap(35);
 		jb8.setIcon(new ImageIcon(newImg7));
-        jb8.setPreferredSize(new Dimension(200, 40));
+        jb8.setPreferredSize(new Dimension(200, 50));
         jb8.setBackground(Color.white);
 
         jp16.add(jp17);
@@ -219,12 +223,12 @@ public class Main extends JFrame  implements ActionListener{
         jp19 = new JPanel();
         jp19.setBackground(new Color(204, 204, 255));
         jp19.add(jb9 = new JButton("Thông Tin Tài Khoản"));
-        ImageIcon originalIcon8 = new ImageIcon(getClass().getResource("/img/social-media.png"));
+        ImageIcon originalIcon8 = new ImageIcon(getClass().getResource("/social-media.png"));
 		Image img8= originalIcon8.getImage();
 		Image newImg8 = img8.getScaledInstance(30, 30, Image.SCALE_SMOOTH); 
 		jb9.setIconTextGap(10);
 		jb9.setIcon(new ImageIcon(newImg8));
-        jb9.setPreferredSize(new Dimension(200,40));
+        jb9.setPreferredSize(new Dimension(200,50));
         jb9.setBackground(Color.white);
 
         jp18.add(jp19);
@@ -235,10 +239,12 @@ public class Main extends JFrame  implements ActionListener{
         this.add(jpl, BorderLayout.WEST);  
         
         contentPanel = new JPanel();
+        
+		contentPanel.setBorder(BorderFactory.createEmptyBorder(-10,0,0,0));
         contentPanel.setBackground(Color.LIGHT_GRAY);
-        contentPanel.setPreferredSize(new Dimension((int) (this.getWidth() * 0.8), this.getHeight()));
+        contentPanel.setPreferredSize(new Dimension(this.getWidth(), this.getHeight()));
         this.add(contentPanel, BorderLayout.CENTER);
-
+        
 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(new Dimension(1200, 800));
@@ -249,22 +255,41 @@ public class Main extends JFrame  implements ActionListener{
             @Override
             public void componentResized(ComponentEvent e) {
                 updatePanelSize();
+                
             }
         });
         jb1.addActionListener(this);
         jb2.addActionListener(this);
         jb3.addActionListener(this);
-        jb4.addActionListener(this);
         jb5.addActionListener(this);
         jb6.addActionListener(this);
         jb7.addActionListener(this);
-        
+        jb8.addActionListener(this);
         jb9.addActionListener(this);
+        
+        
+        jb1.setFocusPainted(false);
+        jb2.setFocusPainted(false);
+        jb3.setFocusPainted(false);
+        jb5.setFocusPainted(false);
+        jb6.setFocusPainted(false);
+        jb7.setFocusPainted(false);
+        jb8.setFocusPainted(false);
+        jb9.setFocusPainted(false);
         
         
 
     }
-
+    void addImageToContentPanel(String imagePath) {
+        contentPanel.removeAll(); // Xóa tất cả các thành phần hiện có
+        ImageIcon imageIcon1 = new ImageIcon(getClass().getResource(imagePath));
+        Image img1 = imageIcon1.getImage().getScaledInstance((int)(this.getWidth()*0.8),this.getHeight(),Image.SCALE_DEFAULT);;
+        ImageIcon img2 = new ImageIcon(img1);
+        JLabel imageLabel = new JLabel(img2);
+        contentPanel.add(imageLabel, BorderLayout.CENTER); // Thêm JLabel chứa ảnh vào contentPanel
+        contentPanel.revalidate(); // Cập nhật layout
+        contentPanel.repaint(); // Vẽ lại contentPanel
+    }
     private void updatePanelSize() {
         int frameWidth = this.getWidth();
         int frameHeight = this.getHeight();
@@ -294,10 +319,28 @@ public class Main extends JFrame  implements ActionListener{
 
         contentPanel.removeAll();
 
-        if (source == jb1) 
+        if (source == jb1) { 
            contentPanel.add(new TaiKhoan(), BorderLayout.CENTER);
-        
-
+        }
+        else if(source == jb2) {
+        	contentPanel.add(new MonHoc(), BorderLayout.CENTER);
+        }
+        else if(source == jb5)
+        {
+        	contentPanel.add(new LopHoc(), BorderLayout.CENTER);
+        }
+        else if(source == jb3) {
+        	contentPanel.add(new SinhVien(), BorderLayout.CENTER);
+        }
+        else if(source == jb6) {
+        	contentPanel.add(new HocPhan(), BorderLayout.CENTER);
+        }
+        else if(source == jb8) {
+        	contentPanel.add(new GiaoVien(), BorderLayout.CENTER);
+        }
+        else if(source == jb9) {
+        	contentPanel.add(new user_Information(), BorderLayout.CENTER);
+        }
         contentPanel.revalidate();
         contentPanel.repaint();
     }

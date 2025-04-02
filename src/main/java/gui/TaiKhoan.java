@@ -1,4 +1,4 @@
-package view;
+package gui;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -186,18 +186,18 @@ public class TaiKhoan extends JPanel {
     	boxjplc = box.createHorizontalBox();
     	boxjplc1 = box.createVerticalBox();
     	boxjplc2 = box.createVerticalBox();
-    	jltaikhoan = new JLabel("Tên Tài Khoản");
+    	jltaikhoan = new JLabel("Tên Tài Khoản : ");
     	jltaikhoan.setFont(new Font("Arial",Font.BOLD,14));
     	LineBorder lb = new LineBorder(Color.white,3,true);
     	txttaikhoan = new JTextField(10);
     	txttaikhoan.setBorder(lb);
     	
-    	jlmatkhau = new JLabel("Mật Khẩu");
+    	jlmatkhau = new JLabel("Mật Khẩu : ");
     	jlmatkhau.setFont(new Font("Arial",Font.BOLD,14));
     	txtmatkhau = new JTextField(10);
     	txtmatkhau.setBorder(lb);
     	
-    	jlvaitro = new JLabel("Vai Trò");
+    	jlvaitro = new JLabel("Vai Trò : ");
     	jlvaitro.setFont(new Font("Arial",Font.BOLD,14));
     	txtvaitro = new JTextField(10);
     	txtvaitro.setBorder(lb);
@@ -213,7 +213,8 @@ public class TaiKhoan extends JPanel {
     	boxjplc2.add(box.createVerticalStrut(5));
     	boxjplc2.add(txtmatkhau);
     	boxjplc2.add(box.createVerticalStrut(5));
-    	boxjplc2.add(txtvaitro);    	
+    	boxjplc2.add(txtvaitro);
+    	
     	boxjplc.add(boxjplc1);
     	boxjplc.add(box.createHorizontalStrut(10));
     	boxjplc.add(boxjplc2);
@@ -247,6 +248,9 @@ public class TaiKhoan extends JPanel {
     	jbuttonxoa.setBackground(Color.white);
     	jbuttonsua = new JButton("  Sửa ");
     	jbuttonsua.setBackground(Color.white);
+    	jbuttonthem = new JButton("Thêm");
+    	jbuttonthem.setBackground(Color.white);
+    	
     	
     	jbuttonthem.setFocusPainted(false);
     	jbuttonxoa.setFocusPainted(false);

@@ -1,7 +1,5 @@
 package gui;
 
-import dao.AccountDAO;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,15 +36,14 @@ public class DangNhap extends JFrame implements ActionListener {
 	private Box boxbtn1;
 	private Box boxbtn2;
 	private JButton jb2;
-    private AccountDAO dao;
+
 	public DangNhap() {
-        dao = new AccountDAO("mongodb://localhost:27017", "23704871");
         this.setTitle("Đăng Nhập");
         this.setSize(new Dimension(700, 500));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         // Đặt ảnh nền
-        URL backgroundURL = getClass().getResource("/img/DangNhap.png");
+        URL backgroundURL = getClass().getResource("/DangNhap.png");
         BackgroundPanel bgPanel;
         if (backgroundURL != null) {
             bgPanel = new BackgroundPanel(new ImageIcon(backgroundURL).getImage());
@@ -73,7 +70,7 @@ public class DangNhap extends JFrame implements ActionListener {
         jpc.setPreferredSize(new Dimension(550,250));
         // jpcenter-left
         jpcl = new JPanel();
-        ImageIcon imgc = new ImageIcon(getClass().getResource("/img/user.png"));
+        ImageIcon imgc = new ImageIcon(getClass().getResource("/user.png"));
         Image img = imgc.getImage().getScaledInstance(150,150,Image.SCALE_DEFAULT);
         ImageIcon imgc1 = new ImageIcon(img);
         
@@ -151,9 +148,10 @@ public class DangNhap extends JFrame implements ActionListener {
 		{
 			String username = txtten.getText();
 			String pwd = new String(((JPasswordField)txtmk).getPassword());
-			if(dao.checkLogIn(username, pwd))
+			if(username.equals("dat") && pwd.equals("duc"))
 			{
-				new Main();
+				dispose();
+				new LoadScreen();
 			}
 			else {
 				JOptionPane.showMessageDialog(this,"Anh Nhắc Em!!");
